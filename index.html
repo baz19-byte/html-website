@@ -3,63 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
+    <title>Team Blue | Security Analyst Portfolio</title>
     <style>
+        /* --- Basic Setup & Fonts --- */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: #f4f7f6; /* Very light grey background */
             color: #333;
         }
+
+        /* --- Main Container --- */
         .container {
-            max-width: 800px;
+            max-width: 960px;
             margin: auto;
+            overflow: auto;
+            padding: 0 20px;
+        }
+        
+        /* --- Typography & Links --- */
+        h1, h2, h3 {
+            color: #1a2533; /* Dark blue-grey for headings */
+        }
+
+        a {
+            color: #007bff; /* Bright blue for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Monospace font for tech details */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* --- Header & Navigation --- */
+        .site-header {
+            background: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 2px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #004085; /* Deeper blue for logo */
+        }
+        
+        .main-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        /* --- Page Sections --- */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #007bff;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            text-decoration: none;
+        }
+
+        /* --- Portfolio/Work Section --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
             background: #fff;
+            border: 1px solid #ddd;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        header {
+        
+        .project-card h3 {
+            margin-top: 0;
+            color: #004085;
+        }
+
+        /* --- Contact Section --- */
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important for padding */
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #28a745; /* Green for submit */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .contact-form button:hover {
+            background: #218838;
+        }
+
+        .contact-info {
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
+            margin-top: 30px;
         }
-        h1 {
-            color: #0056b3;
-        }
-        footer {
+        
+        /* --- Footer --- */
+        .site-footer {
             text-align: center;
-            margin-top: 20px;
-            padding-top: 10px;
+            padding: 20px 0;
+            background: #1a2533;
+            color: #a9b3c1;
             font-size: 0.9em;
-            color: #777;
         }
+        
     </style>
 </head>
 <body>
 
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Team Blue Security</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>Welcome to My Website! 👋</h1>
-        </header>
+        
+        <section id="hero" class="hero">
+            <img src="https://via.placeholder.com/150" alt="Professional Photo of Your Name">
+            <h1>Your Name</h1>
+            <p>
+                A dedicated and detail-oriented Security Analyst specializing in threat detection and incident response. 
+                Passionate about defending digital infrastructures and creating a safer cyberspace.
+            </p>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </section>
 
-        <main>
-            <h2>About This Page</h2>
-            <p>This is a simple HTML page that you can use as a starting point for your own website. It includes a header, a main content area, and a footer. It also has some basic CSS for styling.</p>
-            
-            <h3>What is HTML?</h3>
-            <p><strong>HTML</strong> stands for HyperText Markup Language. It's the standard language used to create and design documents on the World Wide Web. It structures the content using a series of elements, which are represented by tags.</p>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                With a background in network administration and a deep passion for cybersecurity, I have developed a comprehensive skill set in defensive security operations. My approach is proactive and analytical, focusing on identifying vulnerabilities before they can be exploited. I thrive in collaborative environments and am committed to continuous learning to stay ahead of emerging threats.
+            </p>
+            <h3>Skills and Expertise</h3>
+            <ul>
+                <li><strong>SIEM & Log Analysis:</strong> Splunk, ELK Stack, QRadar</li>
+                <li><strong>Incident Response:</strong> Forensic Analysis, Malware Triage, Containment Strategies</li>
+                <li><strong>Network Security:</strong> Firewall Configuration, IDS/IPS Management (Suricata, Snort), PCAP Analysis (Wireshark)</li>
+                <li><strong>Scripting:</strong> Python, Bash for automation and analysis</li>
+                <li><strong>Certifications:</strong> CompTIA Security+, Certified Ethical Hacker (CEH) - *add your own*</li>
+            </ul>
+            <h3>Education and Experience</h3>
+            <p>
+                <strong>Security Analyst | ABC Corporation | 2021 - Present</strong><br>
+                Monitored network traffic for suspicious activity, led incident response for security breaches, and developed security awareness training for staff.
+            </p>
+            <p>
+                <strong>Bachelor of Science in Cybersecurity | University of Technology | 2017 - 2021</strong><br>
+                Graduated with honors, focusing on network defense and ethical hacking.
+            </p>
+        </section>
 
-            <h3>What about the style?</h3>
-            <p>The visual presentation (colors, fonts, layout) is controlled by <strong>CSS</strong> (Cascading Style Sheets). In this example, the CSS is included directly in the HTML file inside the <code>&lt;style&gt;</code> tag in the head section.</p>
-        </main>
+        <section id="portfolio">
+            <h2>Portfolio & Projects</h2>
+            <div class="portfolio-grid">
+                
+                <div class="project-card">
+                    <h3>Threat Intelligence Feed Aggregator</h3>
+                    <p>Developed a Python script that aggregates multiple open-source threat intelligence feeds (OSINT) into a single, deduplicated list of malicious IP addresses, preparing them for ingestion into a firewall or SIEM.</p>
+                    <p><strong>Technologies used:</strong> <code>Python</code>, <code>REST APIs</code>, <code>SQLite</code>, <code>Git</code></p>
+                    <a href="#!">View on GitHub</a>
+                </div>
 
-        <footer>
-            <p>&copy; 2025 Your Name</p>
-        </footer>
+                <div class="project-card">
+                    <h3>Home Lab Network Security Monitoring</h3>
+                    <p>Designed and built a secure home lab environment to simulate enterprise networks. Deployed Security Onion to monitor traffic, analyze alerts from Suricata IDS, and practice forensic analysis on captured network data (PCAPs).</p>
+                    <p><strong>Technologies used:</strong> <code>Security Onion</code>, <code>Suricata</code>, <code>Zeek</code>, <code>VMware ESXi</code></p>
+                    <a href="#!">Read Case Study</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Phishing Campaign Analysis</h3>
+                    <p>Conducted a detailed analysis of a simulated phishing campaign. Deconstructed malicious email headers and attachments, identified indicators of compromise (IOCs), and wrote a comprehensive report for non-technical stakeholders.</p>
+                    <p><strong>Technologies used:</strong> <code>Email Header Analysis</code>, <code>VirusTotal</code>, <code>Static/Dynamic Malware Analysis</code></p>
+                    <a href="#!">View Report</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-form">
+                <form action="#"> <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p>Or reach out directly:</p>
+                <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p>
+                    <strong>Social:</strong> 
+                    <a href="#!" target="_blank">LinkedIn</a> | 
+                    <a href="#!" target="_blank">GitHub</a> | 
+                    <a href="#!" target="_blank">Twitter</a>
+                </p>
+                <p><strong>Location:</strong> Craigieburn, Victoria, Australia</p>
+            </div>
+        </section>
+
     </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Your Name | Team Blue Security Portfolio</p>
+    </footer>
 
 </body>
 </html>
