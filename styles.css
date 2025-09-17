@@ -547,3 +547,15 @@
             color: #0a0a0b;
             border: 2px solid #0a0a0b;
         }
+
+        /* Make code blocks larger and readable */
+        .code-block pre {
+        font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', monospace;
+        font-size: 12px;      /* Increase as needed, e.g., 1.2rem or 18px */
+        background: #0a0a0b;
+        color: #fafafa;
+        padding: 1.2em 1em;
+        border-radius: 8px;
+        overflow-x: auto;
+        line-height: 1.6;
+        }
