@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Blue | Security Analyst Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">TEAM_BLUE.exe</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">/about</a></li>
+                    <li><a href="#portfolio">/portfolio</a></li>
+                    <li><a href="#contact">/contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="hero" class="hero">
+            <img src="https://via.placeholder.com/150/0a0a0b/00ff41?text=ANON" alt="Security Analyst Avatar">
+            <h1 class="terminal-cursor">[SECURITY_ANALYST]</h1>
+            <p>
+                Elite Security Operations Specialist | Threat Hunter | Digital Forensics Expert<br>
+                <code>Penetrating systems, defending networks, hunting threats in the digital shadows.</code>
+            </p>
+            <a href="#portfolio" class="cta-button">Initialize Portfolio</a>
+        </section>
+
+        <section id="about">
+            <h2>[PROFILE.exe]</h2>
+            <p>
+                Advanced persistent threat hunter with deep expertise in blue team operations, incident response, and digital forensics. 
+                Specializing in detecting advanced attacks, reverse engineering malware, and building defensive security architectures. 
+                Combat-tested in high-stakes environments where milliseconds matter and zero-day threats lurk in the shadows.
+            </p>
+            <h3>// TECHNICAL ARSENAL</h3>
+            <ul>
+                <li><strong>SIEM & Threat Hunting:</strong> <code>Splunk Enterprise Security</code> <code>IBM QRadar</code> <code>Elastic SIEM</code> <code>Microsoft Sentinel</code></li>
+                <li><strong>Incident Response:</strong> <code>SANS DFIR</code> <code>Volatility</code> <code>Autopsy</code> <code>YARA Rules</code> <code>Threat Intelligence</code></li>
+                <li><strong>Network Defense:</strong> <code>Suricata</code> <code>Zeek</code> <code>Wireshark</code> <code>pfSense</code> <code>Security Onion</code></li>
+                <li><strong>Malware Analysis:</strong> <code>IDA Pro</code> <code>Ghidra</code> <code>x64dbg</code> <code>Cuckoo Sandbox</code> <code>REMnux</code></li>
+                <li><strong>Automation & Scripting:</strong> <code>Python</code> <code>PowerShell</code> <code>Bash</code> <code>SOAR Platforms</code></li>
+                <li><strong>Certifications:</strong> <code>GCIH</code> <code>GCFA</code> <code>CISSP</code> <code>CEH</code> <code>CySA+</code></li>
+            </ul>
+            <h3>// MISSION_LOG</h3>
+            <p>
+                <strong>Sr. Security Analyst | CyberDefense Corp | 2022 - Present</strong><br>
+                Lead threat hunting operations, orchestrate incident response for APT campaigns, develop custom detection rules, and mentor junior analysts in advanced threat detection techniques.
+            </p>
+            <p>
+                <strong>SOC Analyst II | SecureNet Solutions | 2020 - 2022</strong><br>
+                Specialized in malware analysis and forensics, reduced MTTR by 40% through automation, led tabletop exercises for incident response team.
+            </p>
+            <p>
+                <strong>M.S. Cybersecurity | Cyber University | 2018 - 2020</strong><br>
+                Focus: Advanced Persistent Threats, Digital Forensics, Reverse Engineering
+            </p>
+        </section>
+
+        <section id="portfolio">
+            <h2>[PORTFOLIO.dll]</h2>
+            <div class="portfolio-grid">
+                
+                <div class="project-card">
+                    <h3>// Advanced Threat Intel Platform</h3>
+                    <p>Engineered a real-time threat intelligence aggregation system that correlates IOCs from 15+ premium feeds, automatically generates YARA rules, and integrates with MISP for threat sharing. Features ML-based threat scoring and automated IOC validation.</p>
+                    <p><strong>Stack:</strong> <code>Python</code> <code>Redis</code> <code>PostgreSQL</code> <code>MISP API</code> <code>YARA</code> <code>Docker</code></p>
+                    <a href="threat_intel_project.html">./view_project --github</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>// Malware Hunting Lab</h3>
+                    <p>Constructed an isolated malware analysis environment with automated detonation, behavioral analysis, and IOC extraction. Integrated with Cuckoo Sandbox, CAPE, and custom Python modules for advanced static/dynamic analysis and APT attribution.</p>
+                    <p><strong>Stack:</strong> <code>VMware vSphere</code> <code>Cuckoo Sandbox</code> <code>CAPE</code> <code>Remnux</code> <code>Volatility</code></p>
+                    <a href="malware_lab_project.html">./execute --analysis</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>// Red Team Emulation Framework</h3>
+                    <p>Developed a comprehensive adversary emulation platform based on MITRE ATT&CK framework. Simulates APT29, Lazarus, and custom attack chains to test detection capabilities and validate security controls in enterprise environments.</p>
+                    <p><strong>Stack:</strong> <code>Cobalt Strike</code> <code>Empire</code> <code>Metasploit</code> <code>CALDERA</code> <code>MITRE ATT&CK</code></p>
+                    <a href="red_team_emulation.html">./simulate --apt</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>// Zero-Day Detection Engine</h3>
+                    <p>Built machine learning-powered anomaly detection system for identifying zero-day exploits and advanced evasion techniques. Utilizes behavioral analysis, entropy calculation, and graph-based attack path modeling with 98.7% accuracy rate.</p>
+                    <p><strong>Stack:</strong> <code>TensorFlow</code> <code>Scikit-learn</code> <code>Apache Kafka</code> <code>Elasticsearch</code> <code>Kibana</code></p>
+                    <a href="#!">./classify --zero_day</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>// Incident Response Orchestration</h3>
+                    <p>Automated incident response playbooks using SOAR platform integration. Reduces response time from hours to minutes through intelligent threat triage, automated containment actions, and seamless integration with security tools ecosystem.</p>
+                    <p><strong>Stack:</strong> <code>Phantom SOAR</code> <code>TheHive</code> <code>MISP</code> <code>Python</code> <code>REST APIs</code></p>
+                    <a href="#!">./respond --auto</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>// Dark Web Intelligence Crawler</h3>
+                    <p>Developed steganographic dark web monitoring system for threat intelligence gathering. Monitors underground markets, leak sites, and hacker forums for company mentions, credential dumps, and emerging attack tools with OPSEC-safe architecture.</p>
+                    <p><strong>Stack:</strong> <code>Tor Network</code> <code>Scrapy</code> <code>MongoDB</code> <code>NLP/NLTK</code> <code>Encrypted Storage</code></p>
+                    <a href="#!">./crawl --darkweb</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>[CONTACT.sys]</h2>
+            <div class="contact-form">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">$ whoami</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your handle...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">$ echo $EMAIL</label>
+                        <input type="email" id="email" name="email" required placeholder="user@domain.tld">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">$ cat message.txt</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Encrypted message content..."></textarea>
+                    </div>
+                    <button type="submit">./send --encrypted</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p><code>// SECURE COMMUNICATION CHANNELS</code></p>
+                <p><strong>Email:</strong> <a href="mailto:analyst@teamblue.sec">analyst@teamblue.sec</a></p>
+                <p><strong>PGP Key:</strong> <code>4096R/0xDEADBEEF</code></p>
+                <p>
+                    <strong>Networks:</strong> 
+                    <a href="#!" target="_blank">LinkedIn/in/security-analyst</a> | 
+                    <a href="#!" target="_blank">GitHub/@blue-team-analyst</a> | 
+                    <a href="#!" target="_blank">Twitter/@CyberBlueTeam</a>
+                </p>
+                <p><strong>Location:</strong> <code>Melbourne, VIC, AU [OPSEC: ENABLED]</code></p>
+                <p><strong>Timezone:</strong> <code>UTC+11 (AEDT)</code></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2025 [CLASSIFIED] | Team Blue Security Operations | <code>All systems secured</code></p>
+    </footer>
+
+    <button id="backToTop" title="Back to Top">&#8679;</button>
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+        });
+        document.getElementById('backToTop').onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
