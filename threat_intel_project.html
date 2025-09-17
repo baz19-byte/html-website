@@ -93,6 +93,7 @@
             
             <h3>Core Processing Engine</h3>
             <div class="code-block" data-lang="Python">
+                <pre>
 class ThreatIntelProcessor:
     def __init__(self):
         self.redis_client = redis.Redis(host='redis-cluster', decode_responses=True)
@@ -128,10 +129,12 @@ class ThreatIntelProcessor:
             'score': threat_score,
             'timestamp': datetime.utcnow()
         }
+                </pre>
             </div>
 
             <h3>Machine Learning Scoring Algorithm</h3>
             <div class="code-block" data-lang="Python">
+                <pre>
 class ThreatScoringEngine:
     def __init__(self):
         self.model = joblib.load('/models/threat_score_rf_v2.pkl')
@@ -156,6 +159,7 @@ class ThreatScoringEngine:
         threat_probability = self.model.predict_proba([feature_vector])[0][1]
         
         return min(max(threat_probability, 0.0), 1.0)
+                </pre>
             </div>
         </div>
 
@@ -164,6 +168,7 @@ class ThreatScoringEngine:
             <p>The platform automatically generates YARA rules based on malware family clustering and IOC relationships. This enables proactive detection of new variants from known threat actors.</p>
             
             <div class="code-block" data-lang="YARA">
+                <pre>
 rule APT29_Cobalt_Strike_Beacon_Auto_Generated {
     meta:
         author = "Threat Intel Platform - Auto Generated"
@@ -180,6 +185,7 @@ rule APT29_Cobalt_Strike_Beacon_Auto_Generated {
     condition:
         2 of them and filesize < 5MB
 }
+                </pre>
             </div>
         </div>
 
@@ -215,6 +221,7 @@ rule APT29_Cobalt_Strike_Beacon_Auto_Generated {
             <p>The platform runs on a Kubernetes cluster with automated CI/CD pipelines. Monitoring includes Prometheus metrics, ELK stack logging, and PagerDuty alerting for critical issues.</p>
             
             <div class="code-block" data-lang="YAML">
+                <pre>
 # docker-compose.yml (simplified)
 version: '3.8'
 services:
@@ -236,6 +243,8 @@ services:
     replicas: 2
     volumes:
       - ml_models:/models:ro
+                    </pre>
+
             </div>
         </div>
 
